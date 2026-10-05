@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Conversor de Temperaturas{% endblock %}
+
+{% block content %}
+
+<section class="card">
+
+    <h2>✨ Faça sua conversão</h2>
+
+    <form method="POST">
+
+        <div class="campo">
+            <label for="temperatura">Temperatura</label>
+
+            <input
+                type="text"
+                id="temperatura"
+                name="temperatura"
+                placeholder="Ex: 25"
+                value="{{ temperatura }}"
+                required
+            >
+        </div>
+
+        <div class="linha">
+
+            <div class="campo">
+                <label for="origem">De</label>
+
+                <select id="origem" name="origem">
+
+                    <option value="celsius"
+                        {% if origem == "celsius" %}selected{% endif %}>
+                        Celsius (°C)
+                    </option>
+
+                    <option value="fahrenheit"
+                        {% if origem == "fahrenheit" %}selected{% endif %}>
+                        Fahrenheit (°F)
+                    </option>
+
+                    <option value="kelvin"
+                        {% if origem == "kelvin" %}selected{% endif %}>
+                        Kelvin (K)
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="seta">
+                →
+            </div>
+
+            <div class="campo">
+                <label for="destino">Para</label>
+
+                <select id="destino" name="destino">
+
+                    <option value="fahrenheit"
+                        {% if destino == "fahrenheit" %}selected{% endif %}>
+                        Fahrenheit (°F)
+                    </option>
+
+                    <option value="celsius"
+                        {% if destino == "celsius" %}selected{% endif %}>
+                        Celsius (°C)
+                    </option>
+
+                    <option value="kelvin"
+                        {% if destino == "kelvin" %}selected{% endif %}>
+                        Kelvin (K)
+                    </option>
+
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit">
+            Converter ✨
+        </button>
+
+    </form>
+
+    {% if resultado is not none %}
+    <div class="resultado">
+
+        <span>Resultado</span>
+
+        <strong>
+            {{ resultado|round(2) }}
+        </strong>
+
+        <p>
+            {{ origem|capitalize }}
+            →
+            {{ destino|capitalize }}
+        </p>
+
+    </div>
+    {% endif %}
+
+    {% if erro %}
+    <div class="erro">
+        ❌ {{ erro }}
+    </div>
+    {% endif %}
+
+</section>
+
+<section class="info">
+
+    <div>
+        <span>°C</span>
+        <p>Celsius</p>
+    </div>
+
+    <div>
+        <span>°F</span>
+        <p>Fahrenheit</p>
+    </div>
+
+    <div>
+        <span>K</span>
+        <p>Kelvin</p>
+    </div>
+
+</section>
+
+{% endblock %}
