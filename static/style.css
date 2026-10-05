@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #f5d9df 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #e7d4e5 0%, transparent 35%),
+        #f8f1eb;
+
+    color: #432d3b;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.icone {
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+.cabecalho h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #542c46;
+}
+
+.cabecalho p {
+    margin-top: 8px;
+    color: #806a76;
+}
+
+/* CARD */
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid #ead8df;
+    border-radius: 24px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 40px rgba(84, 44, 70, 0.10);
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #542c46;
+
+    margin-bottom: 25px;
+}
+
+/* CAMPOS */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.campo label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #684557;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #decbd4;
+    border-radius: 12px;
+
+    background: #fffaf8;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+
+    color: #432d3b;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #a96b89;
+
+    box-shadow: 0 0 0 3px rgba(169, 107, 137, 0.12);
+}
+
+.linha {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.seta {
+    font-size: 25px;
+    color: #a96b89;
+
+    padding-bottom: 9px;
+}
+
+/* BOTÃO */
+
+button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #542c46;
+    color: white;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #713c5c;
+    transform: translateY(-2px);
+}
+
+/* RESULTADO */
+
+.resultado {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #f4e4e9;
+
+    text-align: center;
+}
+
+.resultado span {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #806a76;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.resultado strong {
+    display: block;
+
+    margin: 8px 0;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+
+    color: #542c46;
+}
+
+.resultado p {
+    color: #806a76;
+}
+
+/* ERRO */
+
+.erro {
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #f8e1e1;
+
+    color: #8b3f48;
+
+    text-align: center;
+}
+
+/* ESCALAS */
+
+.info {
+    display: flex;
+
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.info div {
+    flex: 1;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid #ead8df;
+
+    border-radius: 15px;
+}
+
+.info span {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    color: #542c46;
+}
+
+.info p {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #806a76;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    color: #806a76;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .cabecalho h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .linha {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .seta {
+        display: none;
+    }
+
+    .info {
+        gap: 8px;
+    }
+
+}
